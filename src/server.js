@@ -4,11 +4,10 @@ const Discord = require('discord.js');
 
 const messages = require('./assets/messages');
 const commands = require('./assets/commands');
-const roles = require('./assets/IDs/roles');
-const channels = require('./assets/IDs/channels');
+// const roles = require('./assets/IDs/roles');
+// const channels = require('./assets/IDs/channels');
 
 const client = new Discord.Client();
-const bot = new Discord.Client();
 
 client.on('ready', () => {
   console.log(`Estoy listo joven Wayne!`);
