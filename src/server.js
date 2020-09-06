@@ -31,7 +31,7 @@ client.on('ready', () => {
 });
 
 client.on('guildMemberAdd', (member) => {
-  member.send(messages.welcome);
+  member.send(messages.welcome + ' test');
 });
 
 client.on('message', msg => {
