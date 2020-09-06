@@ -1,11 +1,28 @@
 const dotenv = require('dotenv');
 dotenv.config();
+
+const http = require('http');
+const express = require('express');
+const app = express();
+
+app.use(express.static('public'));
+
+app.get("/", function (request, response) {
+  response.sendFile(__dirname + '/public/index.html');
+});
+
+app.get("/", (request, response) => {
+  response.sendStatus(200);
+});
+
+app.listen(process.env.PORT, () => {
+  console.log(`Servidor alojado en el puerto: ${process.env.PORT}`);
+});
+
 const Discord = require('discord.js');
 
 const messages = require('./assets/messages');
 const commands = require('./assets/commands');
-// const roles = require('./assets/IDs/roles');
-// const channels = require('./assets/IDs/channels');
 
 const client = new Discord.Client();
 
